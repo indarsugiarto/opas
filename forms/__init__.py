@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets,QtCore,QtGui
+from PyQt5.QtWidgets import QMessageBox
 import time
 from ._mainWindow import Ui_MainWindow
 from ._dashboard import Ui_MonitorForm
@@ -84,6 +85,13 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
         self.action_About.triggered.connect(self.showAbout)
         self.action_Keluar.triggered.connect(self.finish)
         self.action_Seting.triggered.connect(self.showConfig)
+        self.action_Penggunaan.triggered.connect(self.oops)
+        self.pbSetting.clicked.connect(self.showConfig)
+        self.pbMon.clicked.connect(self.showDashboard)
+        self.pbHelp.clicked.connect(self.oops)
+
+    def oops(self):
+        QMessageBox.information(self, 'Error', "Belum selesai dibuat...", QMessageBox.Ok, QMessageBox.Ok)
 
     def finish(self):
         self.close()
