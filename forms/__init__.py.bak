@@ -1,0 +1,66 @@
+from PyQt5 import QtWidgets
+from ._mainWindow import Ui_MainWindow
+from ._dashboard import Ui_MonitorForm
+
+"""
+-----------------------------------------
+Bagian ini berhubungan dengan main Window
+-----------------------------------------
+"""
+class mage(QtWidgets.QMainWindow):
+    def __init__(self, parent=None):
+        """
+        Bikin UI utama
+        """
+        super(mage,self).__init__(parent)
+        #self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        #self.MainWindow.setCentralWidget(self.ui.mdiArea)
+        """
+        Bikin UI dashboard
+        """
+        self.dash = dashboard()
+        self.subDash = QtWidgets.QMdiSubWindow(self.ui.mdiArea)
+        self.subDash.setWidget(self.dash)
+        self.ui.mdiArea.addSubWindow(self.subDash)
+        self.subDash.show()
+        self.show()
+        """
+        ide: semua di-hide sampai login berhasil
+        """
+        self.signalslot()
+
+    def signalslot(self):
+        """
+        deklarasi mekanisme signal-slot"
+        """
+        self.ui.action_Monitor.triggered.connect(self.showDashboard)
+        self.ui.action_Keluar.triggered.connect(self.finish)
+
+    def finish(self):
+        self.close()
+
+    def showDashboard(self):
+        """
+        Tampilkan dashboard
+        """
+        #self.dash.show()
+
+"""
+------------------------------------------------
+Bagian ini berhubungan dengan tampilan dashboard
+------------------------------------------------
+"""
+class dashboard(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        super(dashboard,self).__init__(parent)
+        self.ui = Ui_MonitorForm()
+        self.ui.setupUi(self)
+    def signalslot(self):
+        """
+        deklarasi mekanisme signal-slot"
+        """
+    def show(self):
+        self.show()
+

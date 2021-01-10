@@ -1,0 +1,12 @@
+#!/bin/bash
+pyrcc5 -o form_src_rc.py form_src.qrc 
+pyuic5 --import-from=. -o _mainWindow.py mainWindow.ui
+pyuic5 --import-from=. -o _dashboard.py dashboard.ui
+pyuic5 --import-from=. -o _about.py about.ui
+pyuic5 --import-from=. -o _warning.py warning.ui
+pyuic5 --import-from=. -o _reset.py reset.ui
+pyuic5 --import-from=. -o _config.py config.ui
+
+if [ $? -eq 0 ]; then
+   mv _* ../forms
+fi

@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>warning.png</file>
+    <file>hand_stop.png</file>
+    <file>mon.jpg</file>
+    <file>help.jpg</file>
+    <file>settings.jpg</file>
+  </qresource>
+</RCC>
