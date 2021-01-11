@@ -1,5 +1,7 @@
 from PyQt5 import QtWidgets,QtCore,QtGui
 from PyQt5.QtWidgets import QMessageBox
+import paho.mqtt.client as mqtt
+
 import time
 from ._mainWindow import Ui_MainWindow
 from ._dashboard import Ui_MonitorForm
@@ -24,6 +26,16 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setCentralWidget(self.mdiArea)
         #self.MainWindow.setCentralWidget(self.ui.mdiArea)
+
+        """
+        Mekanisme MQTT
+        """
+        self.mqttc = mqtt.Client()
+        self.mqttc.on_connect = self.on_connect
+        self.mqttc.on_message = self.on_message
+        self.mqttc.connect("iot.petra.ac.id", 1883, 60)
+        self.mqttc.loop_start()
+
         """
         Bikin UI dashboard
         """
@@ -89,6 +101,20 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pbSetting.clicked.connect(self.showConfig)
         self.pbMon.clicked.connect(self.showDashboard)
         self.pbHelp.clicked.connect(self.oops)
+
+    """
+    For Handling MQTT
+    """
+    def on_connect(self, client, userdata, flags, rc):
+        msg = "[MQTT] Connected with result code "+str(rc)
+        self.dash.dbgConsole.appendPlainText(msg)
+        self.dash.dbgConsole.appendPlainText("[MQTT] Subscribing to opas/station")
+        self.mqttc.subscribe("opas/station")
+
+    def on_message(self, client, userdata, msg):
+        pesan = str(msg.payload)
+        msg = "[INFO] Msg: "+msg.topic+" "+pesan
+        self.dash.dbgConsole.appendPlainText(msg)
 
     def oops(self):
         QMessageBox.information(self, 'Error', "Belum selesai dibuat...", QMessageBox.Ok, QMessageBox.Ok)
