@@ -1,7 +1,7 @@
 """
 Deklarasi default Variabel
 """
-SERVER = "127.0.0.1"
+SERVER = "10.52.129.2"
 T_STATION = "opas/station" 
 N_STATION = 8
 RESET_RESET_CODE = 1

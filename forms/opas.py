@@ -145,14 +145,20 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(opas,self).__init__(parent)
         
-        """ Cek dulu apakah darkice sudah dinyalakan """
-        shell = subprocess.run(['ps','aux'],stdout=subprocess.PIPE)
-        result = str(shell.stdout)
-        if result.find('darkice') == -1:
-            #QMessageBox.critical(self, 'ERROR', "Streaming Server 'darkice' belum dijalankan!", QMessageBox.Ok, QMessageBox.Ok)
-            os.system("sudo /usr/bin/darkice &")
-        else:
-            print("[OPAS] Info: darkice sudah terdeteksi!")
+        """ Cek dulu apakah darkice sudah dinyalakan
+            Tapi hanya diserver, yang lain tidak """
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip = print(s.getsockname()[0])
+        s.close()
+        if ip==SERVER:
+            shell = subprocess.run(['ps','aux'],stdout=subprocess.PIPE)
+            result = str(shell.stdout)
+            if result.find('darkice') == -1:
+                os.system("sudo /usr/bin/darkice &")
+            else:
+                print("[OPAS] Info: darkice sudah terdeteksi!")
 
         """
         Mulai dengan setting
