@@ -150,7 +150,7 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
         import socket
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(("8.8.8.8", 80))
-        ip = print(s.getsockname()[0])
+        ip = s.getsockname()[0]
         s.close()
         if ip==SERVER:
             shell = subprocess.run(['ps','aux'],stdout=subprocess.PIPE)
@@ -159,6 +159,8 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
                 os.system("sudo /usr/bin/darkice &")
             else:
                 print("[OPAS] Info: darkice sudah terdeteksi!")
+        else:
+            print("[OPAS] Tidak dijalankan di server (versi dev?)")
 
         """
         Mulai dengan setting
@@ -366,12 +368,11 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
             self.dash.volMon(int(sID),int(vol))
             self.dash.setIP(int(sID),ip)
             
-            """ TODO: 
+            """ Yang perlu dilakukan ketika menerima info dari station: 
                 - perlu didata dulu peta sID dengan ip 
                 - dan send initial volume """
             self.param.map(sID, ip)
             self.dash.sendVol(sID)
-            
             
             """ Lalu update activity Monitor """
             self.actMon.setIP(sID, ip) #buat reset activity monitor timer
@@ -392,7 +393,8 @@ class opas(QtWidgets.QMainWindow, Ui_MainWindow):
         print(msg)
 
     def oops(self):
-        QMessageBox.information(self, 'Error', "Belum selesai dibuat...", QMessageBox.Ok, QMessageBox.Ok)
+        """ Hanya digunakan untuk debugging """
+        QMessageBox.information(self, 'Error', "Ada yang salah...", QMessageBox.Ok, QMessageBox.Ok)
 
     def finish(self):
         self.close()

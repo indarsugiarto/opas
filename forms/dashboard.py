@@ -9,7 +9,8 @@ from .cdatastruct import opasData
 from .settings import *
 
 """
-Kelas reset untuk menampilkan widget reset
+Kelas reset untuk menampilkan widget reset. 
+Digunakan (dipanggil) oleh kelas dashboard.
 """
 class reset(QtWidgets.QDialog, Ui_Reset):
     def __init__(self, parent=None):
@@ -22,23 +23,17 @@ class reset(QtWidgets.QDialog, Ui_Reset):
         self.pbShutdown.clicked.connect(self.Shutdown)
         
     def Reset(self):
-        """ 
-        Jika tombol Cancel ditekan, tidak perlu melakukan apa-apa
-        """
+        """ Jika tombol Cancel ditekan, tidak perlu melakukan apa-apa """
         self.done(RESET_RESET_CODE)
 
     def Shutdown(self):
-        """ 
-        Jika tombol Cancel ditekan, tidak perlu melakukan apa-apa
-        """
+        """ Jika tombol Cancel ditekan, tidak perlu melakukan apa-apa """
         self.done(RESET_SHUTDOWN_CODE)
 
 
 
 """
-------------------------------------------------
 Bagian ini berhubungan dengan tampilan dashboard
-------------------------------------------------
 """
 class dashboard(QtWidgets.QWidget, Ui_MonitorForm):
     volChanged = QtCore.pyqtSignal(int,int)

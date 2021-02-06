@@ -1,5 +1,6 @@
 """
-Deklarasi default Variabel
+Deklarasi default Variabel yang akan digunakan 
+dalam seluruh bagian dari program
 """
 SERVER = "10.52.129.2"
 T_STATION = "opas/station" 

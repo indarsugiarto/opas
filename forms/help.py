@@ -5,6 +5,11 @@ from ._about import Ui_AboutForm
 from ._userman import Ui_userman
 import subprocess
 
+"""
+Terkait dengan menu identitas program (About) 
+dan user manual (Help)
+"""
+
 class about(QtWidgets.QWidget, Ui_AboutForm):
     finished = QtCore.pyqtSignal()
     def __init__(self, parent=None):
