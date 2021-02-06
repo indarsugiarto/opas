@@ -1,0 +1,9 @@
+#!/bin/bash
+LOGFILE=/var/log/radio.log
+while true
+do
+  echo "Reset controller dimulai di " `date` >> $LOGFILE
+  /usr/bin/python3 /home/pi/reset_radio.py >> $LOGFILE
+  echo "Reset controller terhenti di " `date` >> $LOGFILE
+  sleep 5
+done

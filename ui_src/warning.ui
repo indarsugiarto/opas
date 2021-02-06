@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Warning</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="form_src.qrc">
+    <normaloff>:/icon/pcr-icon-on.png</normaloff>:/icon/pcr-icon-on.png</iconset>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>

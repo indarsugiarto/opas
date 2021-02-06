@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Sending PCR Station Data to the Streaming Server
+Exec=/home/pi/senddata.sh
+#Exec=/usr/bin/lxterminal
+#Terminal=false

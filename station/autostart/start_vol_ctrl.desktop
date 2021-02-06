@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Radio Streaming
+Exec=/home/pi/start_vol_ctrl
+#Exec=/usr/bin/lxterminal
+#Terminal=false

@@ -6,7 +6,13 @@ pyuic5 --import-from=. -o _about.py about.ui
 pyuic5 --import-from=. -o _warning.py warning.ui
 pyuic5 --import-from=. -o _reset.py reset.ui
 pyuic5 --import-from=. -o _config.py config.ui
+pyuic5 --import-from=. -o _userman.py userman.ui
 
 if [ $? -eq 0 ]; then
+   echo "Moving to ../forms"
    mv _* ../forms
+   mv form_src_rc.py ../forms
+   echo "done!"
+else
+   echo "Fail! Something not right!"
 fi

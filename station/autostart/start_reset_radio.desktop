@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Streaming Station Controller
+Exec=/home/pi/start_reset_radio
+#Exec=/usr/bin/lxterminal
+#Terminal=false

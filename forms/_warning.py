@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'warning.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_Warning(object):
     def setupUi(self, Warning):
@@ -14,6 +16,9 @@ class Ui_Warning(object):
         Warning.resize(600, 350)
         Warning.setMinimumSize(QtCore.QSize(600, 350))
         Warning.setMaximumSize(QtCore.QSize(600, 350))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/pcr-icon-on.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Warning.setWindowIcon(icon)
         self.label = QtWidgets.QLabel(Warning)
         self.label.setGeometry(QtCore.QRect(20, 20, 561, 131))
         self.label.setText("")
@@ -49,5 +54,4 @@ class Ui_Warning(object):
         Warning.setWindowTitle(_translate("Warning", "Warning"))
         self.label_3.setText(_translate("Warning", "Raspberry pi clients will be terminated at 17:00!"))
         self.pushButton.setText(_translate("Warning", "Close"))
-
 from . import form_src_rc

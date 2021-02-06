@@ -1,0 +1,9 @@
+#!/bin/bash
+LOGFILE=/var/log/radio.log
+while true
+do
+  echo "Coba terima streaming mulai " `date` >> $LOGFILE
+  mplayer http://10.52.129.2:8000/radio
+  echo "Penerimaan streaming terhenti di " `date` >> $LOGFILE
+  sleep 5
+done

@@ -1,0 +1,9 @@
+#!/bin/bash
+LOGFILE=/var/log/radio.log
+while true
+do
+  echo "Volume control dimulai di " `date` >> $LOGFILE
+  /usr/bin/python3 /home/pi/vol_ctrl.py >> $LOGFILE
+  echo "Volume control terhenti di " `date` >> $LOGFILE
+  sleep 5
+done

@@ -6,21 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1422</width>
+    <width>1420</width>
     <height>851</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Online Public Address System</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="form_src.qrc">
+    <normaloff>:/icon/pcr-icon-on.png</normaloff>:/icon/pcr-icon-on.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QMdiArea" name="mdiArea">
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>-50</y>
-      <width>1431</width>
-      <height>801</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1420</width>
+      <height>751</height>
      </rect>
     </property>
    </widget>
@@ -30,8 +34,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1422</width>
-     <height>20</height>
+     <width>1420</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -290,21 +294,22 @@
      <property name="geometry">
       <rect>
        <x>510</x>
-       <y>-5</y>
+       <y>-1</y>
        <width>901</width>
        <height>71</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>48</pointsize>
+       <family>Ubuntu Condensed</family>
+       <pointsize>54</pointsize>
       </font>
      </property>
      <property name="text">
       <string>Petra Campus Radio</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
     <widget class="Line" name="line_4">

@@ -2,24 +2,29 @@
 
 # Form implementation generated from reading ui file 'mainWindow.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1422, 851)
+        MainWindow.resize(1420, 851)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/pcr-icon-on.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.mdiArea = QtWidgets.QMdiArea(self.centralwidget)
-        self.mdiArea.setGeometry(QtCore.QRect(-10, -50, 1431, 801))
+        self.mdiArea.setGeometry(QtCore.QRect(0, 0, 1420, 751))
         self.mdiArea.setObjectName("mdiArea")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1422, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1420, 22))
         self.menubar.setObjectName("menubar")
         self.menu_File = QtWidgets.QMenu(self.menubar)
         self.menu_File.setObjectName("menu_File")
@@ -41,25 +46,25 @@ class Ui_MainWindow(object):
         font.setPointSize(9)
         self.pbSetting.setFont(font)
         self.pbSetting.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/settings.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.pbSetting.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icon/settings.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.pbSetting.setIcon(icon1)
         self.pbSetting.setIconSize(QtCore.QSize(64, 64))
         self.pbSetting.setObjectName("pbSetting")
         self.pbMon = QtWidgets.QPushButton(self.dockWidgetContents)
         self.pbMon.setGeometry(QtCore.QRect(70, 0, 70, 70))
         self.pbMon.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icon/mon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.pbMon.setIcon(icon1)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icon/mon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.pbMon.setIcon(icon2)
         self.pbMon.setIconSize(QtCore.QSize(64, 64))
         self.pbMon.setObjectName("pbMon")
         self.pbHelp = QtWidgets.QPushButton(self.dockWidgetContents)
         self.pbHelp.setGeometry(QtCore.QRect(160, 0, 70, 70))
         self.pbHelp.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icon/help.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.pbHelp.setIcon(icon2)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icon/help.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.pbHelp.setIcon(icon3)
         self.pbHelp.setIconSize(QtCore.QSize(64, 64))
         self.pbHelp.setObjectName("pbHelp")
         self.lcdJam = QtWidgets.QLCDNumber(self.dockWidgetContents)
@@ -103,11 +108,12 @@ class Ui_MainWindow(object):
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.lokasi = QtWidgets.QLabel(self.dockWidgetContents)
-        self.lokasi.setGeometry(QtCore.QRect(510, -5, 901, 71))
+        self.lokasi.setGeometry(QtCore.QRect(510, -1, 901, 71))
         font = QtGui.QFont()
-        font.setPointSize(48)
+        font.setFamily("Ubuntu Condensed")
+        font.setPointSize(54)
         self.lokasi.setFont(font)
-        self.lokasi.setAlignment(QtCore.Qt.AlignCenter)
+        self.lokasi.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.lokasi.setObjectName("lokasi")
         self.line_4 = QtWidgets.QFrame(self.dockWidgetContents)
         self.line_4.setGeometry(QtCore.QRect(490, 0, 16, 71))
@@ -158,5 +164,4 @@ class Ui_MainWindow(object):
         self.action_Seting.setText(_translate("MainWindow", "&Setting (F2)"))
         self.action_Monitor.setText(_translate("MainWindow", "&Monitor (F3)"))
         self.action_Keluar.setText(_translate("MainWindow", "&Quit"))
-
 from . import form_src_rc

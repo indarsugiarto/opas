@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="icon">
+    <file>pcr.png</file>
+    <file>pcr-icon-off.png</file>
+    <file>pcr-icon-on.png</file>
     <file>warning.png</file>
     <file>hand_stop.png</file>
     <file>mon.jpg</file>

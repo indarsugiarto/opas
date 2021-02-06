@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'config.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_Config(object):
     def setupUi(self, Config):
@@ -14,11 +16,15 @@ class Ui_Config(object):
         Config.resize(800, 500)
         Config.setMinimumSize(QtCore.QSize(800, 500))
         Config.setMaximumSize(QtCore.QSize(800, 500))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/pcr-icon-on.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Config.setWindowIcon(icon)
         self.label = QtWidgets.QLabel(Config)
         self.label.setGeometry(QtCore.QRect(20, 20, 161, 16))
         self.label.setObjectName("label")
         self.ipAddr = QtWidgets.QLineEdit(Config)
         self.ipAddr.setGeometry(QtCore.QRect(20, 40, 113, 23))
+        self.ipAddr.setReadOnly(True)
         self.ipAddr.setObjectName("ipAddr")
         self.label_2 = QtWidgets.QLabel(Config)
         self.label_2.setGeometry(QtCore.QRect(20, 80, 131, 16))
@@ -101,4 +107,4 @@ class Ui_Config(object):
         self.label_9.setText(_translate("Config", "Station-8 Location:"))
         self.pbSave.setText(_translate("Config", "Save"))
         self.pbCancel.setText(_translate("Config", "Cancel"))
-
+from . import form_src_rc
