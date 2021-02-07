@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Online Community Streaming Radio</string>
+   <string>Informasi Program</string>
   </property>
   <property name="windowIcon">
    <iconset resource="form_src.qrc">
